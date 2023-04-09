@@ -1,0 +1,495 @@
+<mvc:View controllerName="ux.SecondProject.controller.View1" width="100%" height="100%"  class="sapUiSizeCompact" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:l="sap.ui.layout" 	xmlns:t="sap.ui.table"
+	xmlns:viz="sap.viz.ui5.controls" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form"
+	xmlns="sap.m" xmlns:common="sap.ui.commons">
+	<Shell id="shell">
+		<App backgroundColor="#525252">
+      <!--  grey  //#525252  aditya birla group bg #af1e23-->
+		<pages>
+			<Page title="{i18n>title}" showHeader="false"  backgroundDesign="Transparent" enableScrolling="true"  	class= "sapUiResponsivePadding--header">
+				<content>
+               <HBox>
+<HBox> 
+										<VBox id="Logounilever" visible="true">
+										<FlexBox class="sapUiLargeMarginEnd" alignItems="End"
+																			justifyContent="End">
+																			<items>
+																				<Image
+																					class="sapUiLargeMarginBegin sapUiTinyMarginTop sapUiMediumMarginBotton sapUiTinyMarginEnd"
+																					src="data:image/png;base64,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"
+																					id="logo" densityAware="false" width="12em" />
+<!-- aditya birla logo:https://www.adityabirla.com/assets/images/logo.jpg  -->
+                                                                                    <!-- collins logo:  https://www.collinsaerospace.com/-/media/project/collinsaerospace/collinsaerospace-website/common/images/ca-navigation-logo.png?h=89&w=318&rev=37c884aa7ccf42a292a5f3ac05f7847a&hash=085C3F3EA97FE1623B311833E1AFD472 -->
+																			</items>
+																		</FlexBox>
+																		</VBox>
+										
+										</HBox>
+<HBox>
+										<VBox id="syscontainer" class="HeaderTile1 sapUiTinyMarginTop sapUiTinyMarginBeginEnd">
+											<Title
+												class="Hbold HeaderTileText1 sapUiMediumMarginBeginEnd sapUiTinyMarginTop"
+												text="Systems - Under Maintenance"></Title>
+											<Text id="sysMaintenance" class="HeaderTileStatusText1 sapUiTinyMarginBegin"
+												text="CRM,ECC"></Text>
+										</VBox>
+
+									</HBox>
+
+									<HBox>
+										<VBox id="criticalcontainer" class="HeaderTile1 sapUiTinyMarginTop sapUiTinyMarginEnd">
+											<Title
+												class="Hbold HeaderTileText1 sapUiMediumMarginBeginEnd sapUiTinyMarginTop"
+												text="Critical Systems"></Title>
+											<Text id="criticalsys" class="HeaderTileStatusText1 sapUiTinyMarginBegin"
+												text="BIW,PLM"></Text>
+										</VBox>
+									</HBox>
+
+									<FlexBox class="sapUiLargeMarginBegin" alignItems="Start"
+										justifyContent="Start">
+										<items>
+										<!-- displayFormat="short" -->
+											<DatePicker
+			id="CurrentDate"
+			value="99991231" valueFormat="yyyyMMdd" displayFormat="long"
+			
+			change="handleDateChange"
+			class="sapUiSmallMarginTop"/> 
+											<!-- <ObjectStatus id="CurrentDate" class="sapUiSmallMarginTop"
+												text="" state="None" /> --> 
+										</items>
+									</FlexBox>
+							</HBox>
+
+                              
+                <IconTabBar id="idIconTabBarMulti" upperCase="false" backgroundDesign="Transparent"
+									applyContentPadding="false" expanded="{device>/isNoPhone}">
+									<items>
+										<!-- IconTab Systems  -->
+										<IconTabFilter class="IconTabText" icon="sap-icon://it-system"
+					iconColor="Negative"
+											text="Systems">
+					<VBox id="TileContainer">
+												<HBox>
+													<f:SimpleForm minWidth="1024px"
+														maxContainerCols="4" layout="ResponsiveLayout">
+														<VBox>
+
+
+															<HBox class="sapUiTinyMarginBottom">
+
+
+																<!--CRM TILE -->
+																<f:SimpleForm id="crmtile" class="equalColumns1"
+																	maxContainerCols="1" title="CRM" editable="false"
+																	layout="ResponsiveLayout">
+																	<VBox id="crmcontainer">
+
+																		<HBox>
+																			<Text class="sapUiMediumMarginTop sapUiSmallMarginBegin"
+																				text="Queue Depth"></Text>
+																			<NumericContent id="crmqd"
+																				class="sapUiSmallMarginBegin sapUiTinyMarginTop"
+																				value="{oCRMModel>/d/StockQuantity}"
+																				valueColor="Critical"							indicator="None" withMargin="false" state="Loaded"
+																				press="onOpenQueueDialog" />
+																		</HBox>
+
+																		<List id= "crmlist" class="sapUiTinyMarginBottom" >
+
+																			<StandardListItem id="crmsys" title="System Errors" 	type="Active" 
+					
+						                                                        press="onOpenSystemDialog"
+																				info="{oCRMModel>/d/DimensionHeight}"
+																				infoState="Error"  />
+
+																			<StandardListItem id="crmapp" title="App Errors" type="Active"
+					
+						                                                        press="onOpenAppDialog"
+																				info="{oCRMModel>/d/DimensionWidth}"
+																				infoState="Error" />
+
+																			<StandardListItem title="No of Threads"
+																				info="{oCRMModel>/d/DimensionDepth}"
+																				infoState="None" />
+																		
+																		</List>
+
+																		<HBox>
+																			<Label class="sapUiTinyMarginBegin" text="Updated at:"></Label>
+																			<Text
+																				text="{
+								                                                    path: 'oCRMModel>/d/LastModified',
+							                                                    formatter: '.Formatter.formatJSONDate'}"></Text>
+                                                                        </HBox>
+																	</VBox>
+																</f:SimpleForm>
+
+																<!-- ECC -->
+																<f:SimpleForm id="ecctile" class="equalColumns2"
+																	maxContainerCols="1" title="ECC" editable="false"
+																	layout="ResponsiveLayout">
+																	<VBox id="ecccontainer">
+																		<HBox>
+																			<Text class="sapUiMediumMarginTop sapUiSmallMarginBegin"
+																				text="Queue Depth"></Text>
+																			<NumericContent id="QdepthECC"
+																				class="Hbold sapUiMediumMarginBegin sapUiTinyMarginTop"
+																				value="{oECCModel>/d/results/1/StockQuantity}"
+																				valueColor="Critical"
+																				indicator="None" withMargin="false" state="Loaded"
+																				press="onOpenECCQueueDialog"/>
+																		</HBox>
+
+																		<List class="sapUiTinyMarginBottom" 
+																			headerText="">
+																			<StandardListItem id="eccsys" title="System Errors" type="Active" 
+					
+						press="onOpenECCSystemDialog"
+																				info="{oECCModel>/d/results/1/DimensionHeight}"
+																				infoState="Warning" />
+																			<StandardListItem id="eccapp" title="App Errors"  type="Active"
+					
+						press="onOpenECCAppDialog"
+																				info="{oECCModel>/d/results/1/DimensionDepth}"
+																				infoState="Warning" />
+																			<StandardListItem title="No of Threads"
+																				info="{oECCModel>/d/results/1/DimensionWidth}"
+																				infoState="None" />
+
+																		</List>
+
+																		<HBox>
+																			<Label class="sapUiSmallMarginBegin" text="Updated at:  "></Label>
+																		<Text
+																				text="{
+								                                                    path: 'oECCModel>/d/results/1/LastModified',
+							                                                    formatter: '.Formatter.formatJSONDate'}"></Text>
+																		</HBox>
+
+																	</VBox>
+
+																</f:SimpleForm>
+
+																<!-- BW -->
+																<f:SimpleForm id="bwtile" class="equalColumns3"
+																	maxContainerCols="1" title="BIW" editable="false"
+																	layout="ResponsiveLayout">
+
+																	<VBox id="bwcontainer">
+
+																		<HBox>
+																			<Text class="sapUiMediumMarginTop sapUiSmallMarginBegin"
+																				text="Queue Depth"></Text>
+																			<NumericContent
+																				class="sapUiSmallMarginBegin sapUiTinyMarginTop"
+																				value="{oBWModel>/d/results/5/StockQuantity}"
+																				valueColor="Critical"
+																				indicator="None" withMargin="false" state="Loaded"
+																				press="onOpenBIWQueueDialog" />
+																		</HBox>
+
+																		<List class="sapUiTinyMarginBottom" 
+																			headerText="">
+
+																			<StandardListItem id="biwsys" title="System Errors" press="onOpenBIWSystemDialog" type="Active" 
+																				info="{oBWModel>/d/results/5/DimensionHeight}"
+																				infoState="Error" />
+																			<StandardListItem id="biwapp" title="App Errors" press="onOpenBIWAppDialog" type="Active" 
+																				info="{oBWModel>/d/results/5/DimensionWidth}"
+																				infoState="Warning" />
+																			<StandardListItem title="No of Threads"
+																				info="{oBWModel>/d/results/5/DimensionDepth}"
+																				infoState="Warning" />
+																		</List>
+
+																		<HBox>
+																			<Label class="sapUiTinyMarginBegin" text="Updated at:"></Label>
+																			<Text
+																				text="{
+								                                                    path: 'oBWModel>/d/results/5/LastModified',
+							                                                    formatter: '.Formatter.formatJSONDate'}"></Text>
+																		</HBox>
+																	</VBox>
+																</f:SimpleForm>
+
+															
+
+																
+
+
+
+
+															</HBox>
+                                                            <HBox>
+
+                                                            <!-- plm -->
+	<f:SimpleForm id="plmtile" class="equalColumns3"
+																	maxContainerCols="1" title="PLM" editable="false"
+																	layout="ResponsiveLayout">
+
+																	<VBox id="plmcontainer">
+
+																		<HBox>
+																			<Text class="sapUiMediumMarginTop sapUiSmallMarginBegin"
+																				text="Queue Depth"></Text>
+																			<NumericContent
+																				class="sapUiSmallMarginBegin sapUiTinyMarginTop"
+																				value="{oPLMModel>/d/results/2/StockQuantity}"
+																				valueColor="Critical"
+																				indicator="None" withMargin="false" state="Loaded"
+																				press="onOpenBIWQueueDialog" />
+																		</HBox>
+
+																		<List class="sapUiTinyMarginBottom" 
+																			headerText="">
+
+																			<StandardListItem id="plmsys" title="System Errors" press="onOpenBIWSystemDialog" type="Active" 
+																				info="{oPLMModel>/d/results/2/DimensionHeight}"
+																				infoState="Error" />
+																			<StandardListItem id="plmapp" title="App Errors" press="onOpenBIWAppDialog" type="Active" 
+																				info="{oPLMModel>/d/results/2/DimensionWidth}"
+																				infoState="Warning" />
+																			<StandardListItem title="No of Threads"
+																				info="{oPLMModel>/d/results/2/DimensionDepth}"
+																				infoState="Warning" />
+																		</List>
+
+																		<HBox>
+																			<Label class="sapUiTinyMarginBegin" text="Updated at:"></Label>
+																			<Text
+																				text="{
+								                                                    path: 'oPLMModel>/d/results/2/LastModified',
+							                                                    formatter: '.Formatter.formatJSONDate'}"></Text>
+																		</HBox>
+																	</VBox>
+																</f:SimpleForm>
+															
+
+<!-- java -->
+<f:SimpleForm id="javatile" class="equalColumns2"
+																	maxContainerCols="1" title="Java" editable="false"
+																	layout="ResponsiveLayout">
+
+																	<VBox id="javacontainer">
+
+																		<HBox>
+																			<Text class="sapUiMediumMarginTop sapUiSmallMarginBegin"
+																				text="Queue Depth"></Text>
+																			<NumericContent
+																				class="sapUiSmallMarginBegin sapUiTinyMarginTop"
+																				value="{oJavaModel>/d/results/3/StockQuantity}"
+																				valueColor="Critical"
+																				indicator="None" withMargin="false" state="Loaded"
+																				press="onOpenBIWQueueDialog" />
+																		</HBox>
+
+																		<List class="sapUiTinyMarginBottom" 
+																			headerText="">
+
+																			<StandardListItem id="javasys" title="System Errors" press="onOpenBIWSystemDialog" type="Active" 
+																				info="{oJavaModel>/d/results/3/DimensionHeight}"
+																				infoState="Error" />
+																			<StandardListItem id="javaapp" title="App Errors" press="onOpenBIWAppDialog" type="Active" 
+																				info="{oJavaModel>/d/results/3/DimensionWidth}"
+																				infoState="Warning" />
+																			<StandardListItem title="No of Threads"
+																				info="{oJavaModel>/d/results/3/DimensionDepth}"
+																				infoState="Warning" />
+																		</List>
+
+																		<HBox>
+																			<Label class="sapUiTinyMarginBegin" text="Updated at:"></Label>
+																			<!-- <Text
+																				text="{oJavaModel>/d/results/3/LastModified}"></Text> -->
+                                                                                <Text
+																				text="{
+								                                                    path: 'oJavaModel>/d/results/3/LastModified',
+							                                                    formatter: '.Formatter.formatJSONDate'}"></Text>
+																		</HBox>
+																	</VBox>
+																</f:SimpleForm>
+<!-- AWS -->
+<f:SimpleForm id="AWStile" class="equalColumns1"
+																	maxContainerCols="1" title="AWS" editable="false"
+																	layout="ResponsiveLayout">
+																	<VBox id="awscontainer">
+
+																		<HBox>
+																			<Text class="sapUiMediumMarginTop sapUiSmallMarginBegin"
+																				text="Queue Depth"></Text>
+																			<NumericContent id="awsqd"
+																				class="sapUiMediumMarginBegin sapUiTinyMarginTop"
+																				value="{oAWSModel>/d/results/4/StockQuantity}"
+																				valueColor="Critical"							indicator="None" withMargin="false" state="Loaded"
+																				press="onOpenQueueDialog" />
+																		</HBox>
+
+																		<List id= "awslist" class="sapUiTinyMarginBottom" >
+
+																			<StandardListItem id="awssys" title="System Errors" 	type="Active" 
+					
+						                                                        press="onOpenSystemDialog"
+																				info="{oAWSModel>/d/results/4/DimensionHeight}"
+																				infoState="Error"  />
+
+																			<StandardListItem id="awsapp" title="App Errors" type="Active"
+					
+						                                                        press="onOpenAppDialog"
+																				info="{oAWSModel>/d/results/4/DimensionWidth}"
+																				infoState="Error" />
+
+																			<StandardListItem title="No of Threads"
+																				info="{oAWSModel>/d/results/4/DimensionDepth}"
+																				infoState="None" />
+																		
+																		</List>
+
+																		<HBox>
+																			<Label class="sapUiSmallMarginBegin" text="Updated at:"></Label>
+																			<!-- <Text
+																				text="{oAWSModel>/d/results/4/LastModified}"></Text> -->
+                                                                                <Text
+																				text="{
+								                                                    path: 'oAWSModel>/d/results/4/LastModified',
+							                                                    formatter: '.Formatter.formatJSONDate'}"></Text>
+																		</HBox>
+																	</VBox>
+																</f:SimpleForm>
+															
+                                                            </HBox>
+
+
+
+
+
+														</VBox>
+													</f:SimpleForm>
+
+												</HBox>
+											</VBox>		
+</IconTabFilter>
+<IconTabFilter class="IconTabText"  icon="sap-icon://manager-insight"
+					iconColor="Negative"
+					text="Reports" 
+					key="reports" >
+                    <Table id="idProductsTable"
+		inset="false"
+		items="{
+			path: '/Products',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+		<headerToolbar>
+        
+			<OverflowToolbar>
+				<content>
+					<Title text="Products" level="H2"/>
+					<ToolbarSpacer />
+					
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>
+		<!-- <infoToolbar>
+			<OverflowToolbar>
+				<Label text="Wide range of available products"/>
+			</OverflowToolbar>
+		</infoToolbar> -->
+		<columns>
+			<Column
+				width="12rem">
+				<Text text="Product" />
+			</Column>
+			<Column
+				minScreenWidth="Tablet"
+				demandPopin="true">
+				<Text text="Supplier" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="End">
+				<Text text="Dimensions" />
+			</Column>
+			<Column
+				minScreenWidth="Desktop"
+				demandPopin="true"
+				hAlign="Center">
+				<Text text="Weight" />
+			</Column>
+			<Column
+				hAlign="End">
+				<Text text="Price" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<ObjectIdentifier
+						title="{Name}"
+						text="{Id}"/>
+					<Text
+						text="{SupplierName}" />
+					<Text
+						text="{DimensionWidth} x {DimensionDepth} x {DimensionHeight} {DimensionUnit}" />
+					<ObjectNumber
+						number="{WeightMeasure}"
+						unit="{WeightUnit}"
+						state="{
+							parts: [
+								{path: 'WeightMeasure'},
+								{path: 'WeightUnit'}
+							],
+							formatter: '.Formatter.weightState'
+						}" />
+					<ObjectNumber
+							number="{
+								parts:[{path:'Price'},{path:'CurrencyCode'}],
+								type: 'sap.ui.model.type.Currency',
+								formatOptions: {showMeasure: false}
+							}"
+							unit="{CurrencyCode}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+                                            </IconTabFilter>
+
+
+									</items>
+                                    <!-- <content>
+						<t:AnalyticalTable visibleRowCountMode="Auto" selectionMode="MultiToggle" rowHeight="32">
+							<t:toolbar>
+								<OverflowToolbar>
+									<ToolbarSpacer />
+									<SearchField width="12rem" />
+									<ToolbarSpacer width="1rem" />
+									<SegmentedButton>
+										<buttons>
+											<Button icon="sap-icon://table-view" />
+											<Button icon="sap-icon://bar-chart" />
+										</buttons>
+									</SegmentedButton>
+									<ToolbarSpacer width="1rem" />
+									<Button icon="sap-icon://group-2" type="Transparent" />
+									<Button icon="sap-icon://action-settings" type="Transparent" />
+								</OverflowToolbar>
+							</t:toolbar>
+							<t:columns>
+								<t:AnalyticalColumn />
+								<t:AnalyticalColumn />
+								<t:AnalyticalColumn />
+								<t:AnalyticalColumn />
+							</t:columns>
+						</t:AnalyticalTable>
+					</content> -->
+								</IconTabBar>
+				</content>
+			</Page>
+		</pages>
+	</App>
+	</Shell>
+</mvc:View>
